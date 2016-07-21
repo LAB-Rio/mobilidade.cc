@@ -1,0 +1,166 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+    <title>Mapa de Informações</title>
+
+    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.11/themes/css/cartodb.css" />
+    <link rel="stylesheet" href="./assets/stylesheets/application.css" />
+
+    <link href='https://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-57287076-3', 'auto');
+    ga('send', 'pageview');
+    </script> 
+    </head>
+  <body>
+
+    <div id="labrio-header">
+      <a href="http://labrio.cc" target="_blank" title="Visitar o site do Laboratório de Participação do Rio"><img src="./assets/images/labrio-header.png" alt="LAB.Rio"/></a>
+
+      <a href="http://desafioagorario.com.br" target="_blank" class="copyleft"><img src="./assets/images/agora-header.png"/></a>
+    </div>
+
+    <div id="header" class="actions-start">
+
+      <div class="text-start">
+        <img src="./assets/images/info.png"/>
+        <h1>Bem vindx ao Mapa de Informações de Mobilidade da Cidade!</h1>
+
+        <p>
+        A Prefeitura criou esse mapa fazendo um exercício de informação e transparência. Aqui você encontra dados públicos organizados de maneira visual, acessível e clara.
+        Você pode ver mais informações de cada ponto no mapa ou <strong>passando o cursor</strong> ou <strong>clicando</strong>. 
+        Fique à vontade para passear, a cidade é sua!
+        </p>
+
+        <p class="text-center"><strong>Equipe LAB.Rio</strong></p>
+
+
+        <a href="#" class="see-map">Ver mapa<img src="./assets/images/arrowdown.png"/></a>
+
+      </div>
+      <!-- end text-start -->
+
+      <div class="header-text">
+        <h2 class="text-left">Mapa de Informações da Mobilidade da Cidade</h2> 
+
+      </div>
+
+
+      <div class="actions header-links column">
+        <a href="#" class="see-map">Sobre o mapa</a>
+        <a href="./acoes.html" class="mayorship">Ações da prefeitura</a>
+        <a href="http://bit.ly/DocsMobilidadeUrbana" target="_blank">Documentos abertos</a>
+        <a href="http://bit.ly/infomapaDadosAbertos" target="_blank">Exportar Dados</a>
+
+      </div>
+    </div>
+
+    <div class="logos">
+      <!-- <a href="http://pmus.com.br" target="_blank" class="copyleft"><img src="./assets/images/logo.png" width="80"/></a>-->
+
+    </div>
+    <div id="map"></div> 
+
+    <div id="layer_selector" class="cartodb-infobox">
+      <h3>Filtros</h3>
+      <ul>
+
+        <li data-sublayer="3">
+
+        <div class="select">
+          <span class="selection">&nbsp;</span>
+          <span class="icon"><img src="./assets/images/populacao.png" width="40" alt="" title="" /></span>
+        </div>
+        <div class="title" title="50 áreas mais populosas">
+          50 áreas mais populosas
+        </div>
+        <div class="info">Fonte: IBGE, Censo 2010.</div> 
+        </li>
+
+        <li data-sublayer="1">
+
+        <div class="select">
+          <span class="selection">&nbsp;</span>
+          <span class="icon"><img src="./assets/images/congestionamento.png"  width="40" alt="" title="" /></span>
+
+        </div>
+
+        <div class="title" title="30 áreas mais engarrafadas">
+          30 áreas mais engarrafadas
+        </div>
+        <div class="info">Fonte: <a href="http://waze.com" target="_blank">Waze</a>, 11/2013 a 07/2014.</div> 
+        </li>
+
+        <li data-sublayer="2">
+        <div class="select">
+          <span class="selection">&nbsp;</span>
+          <span class="icon crash"><img src="./assets/images/acidente.png" width="40"  alt="" title="" /></span>
+        </div>
+        <div class="title">
+          07 áreas com mais acidentes
+        </div>
+        <div class="info">Fonte: <a href="http://waze.com" target="_blank">Waze</a>, 11/2013 a 07/2014.</div> 
+        </li>
+
+
+
+        <li data-sublayer="0">
+        <div class="select">
+          <span class="selection">&nbsp;</span>
+          <span class="icon"><img src="./assets/images/linhas.png" width="30"  alt="" title="" /></span>
+        </div>
+        <div class="title">
+          Rede das linhas de ônibus&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+        </div>
+        <div class="info">
+          Fonte: DataRio/Pensa. 11/2013 a 07/2014.
+        </div> 
+        </li>
+
+
+        <li data-sublayer="4" class="legend-cycling" data-legend="cycling" data-legend-type="custom">
+        <div class="select">
+          <span class="selection">&nbsp;</span>
+          <span class="icon"><img src="./assets/images/bike.png" width="40"  alt="" title="" /></span>
+        </div>
+        <div class="title">
+          Ciclovias e Ciclofaixas 
+        </div>
+        <div class="info">
+          Fonte: <a href="http://www.rio.rj.gov.br/web/smac" target="_blank">SMAC</a>&nbsp;/&nbsp;<a href="http://www.rio.rj.gov.br/web/ipp">IPP</a>
+        </div> 
+        </li>
+        <li class="inform-new">
+        <a href="http://goo.gl/forms/XrTDMN8vFB" target="_blank">Sentiu falta de alguma informação? <span>Sugira aqui</span>.</a>
+        </li>
+
+
+
+      </ul>
+
+    </div>
+
+
+
+
+    <div id="footer">
+      <h5>Realização</h5>
+      <a href="http://labrio.cc" target="_blank"><img src="./assets/images/lab.png" class="logo-1" alt="" title="" width="50"/></a>
+      <a href="#"><img src="./assets/images/pensa.png" class="logo-2" alt="" title="" width="80"/></a>
+      <a href="http://prefeitura.rio" target="_blank"><img src="./assets/images/prefeitura.png" class="logo-1" alt="" title="" width="80"/></a>
+
+    </div>
+
+
+    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.11/cartodb.js"></script>  
+    <script src="./assets/javascripts/application.js"></script>  
+
+  </body>
+</html>
